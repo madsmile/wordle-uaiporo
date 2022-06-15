@@ -15,6 +15,7 @@ window.onload = function(){
   buttonFormOne.onclick = function (e) {
     e.preventDefault();
     Array.from(allInputsFirstForm).forEach(function(input, index, array){
+      input.setAttribute("disabled", "");
       if (respuestaSplit[index] === input.value) return input.classList.add('acierto');
       if (!respuestaSplit.includes(input.value)) return input.classList.add('noExiste');
       if (respuestaSplit.includes(input.value) && respuestaSplit[index] !== input.value) return input.classList.add("lugarEquivocado");
@@ -24,6 +25,7 @@ window.onload = function(){
   buttonFormTwo.onclick = function (e) {
     e.preventDefault();
     Array.from(allInputsSecondForm).forEach(function (input, index, array) {
+      input.setAttribute("disabled", "");
       if (respuestaSplit[index] === input.value) return input.classList.add("acierto");
       if (!respuestaSplit.includes(input.value)) return input.classList.add("noExiste");
       if (respuestaSplit.includes(input.value) && respuestaSplit[index] !== input.value) return input.classList.add("lugarEquivocado");
@@ -33,6 +35,7 @@ window.onload = function(){
   buttonFormThree.onclick = function (e) {
     e.preventDefault();
     Array.from(allInputsthirdFormInput).forEach(function (input, index, array) {
+      input.setAttribute("disabled", "");
       if (respuestaSplit[index] === input.value) return input.classList.add("acierto");
       if (!respuestaSplit.includes(input.value)) return input.classList.add("noExiste");
       if (respuestaSplit.includes(input.value) && respuestaSplit[index] !== input.value) return input.classList.add("lugarEquivocado");
@@ -41,7 +44,9 @@ window.onload = function(){
 
   buttonFormFour.onclick = function (e) {
     e.preventDefault();
+      input.setAttribute("disabled", "");
     Array.from(allInputsfourthFormInput).forEach(function (input, index, array) {
+      input.setAttribute("disabled", "");
       if (respuestaSplit[index] === input.value) return input.classList.add("acierto");
       if (!respuestaSplit.includes(input.value)) return input.classList.add("noExiste");
       if (respuestaSplit.includes(input.value) && respuestaSplit[index] !== input.value) return input.classList.add("lugarEquivocado");
@@ -51,6 +56,7 @@ window.onload = function(){
   buttonFormFive.onclick = function (e) {
     e.preventDefault();
     Array.from(allInputsfifthFormInput).forEach(function (input, index, array) {
+      input.setAttribute("disabled", "");
       if (respuestaSplit[index] === input.value) return input.classList.add("acierto");
       if (!respuestaSplit.includes(input.value)) return input.classList.add("noExiste");
       if (respuestaSplit.includes(input.value) && respuestaSplit[index] !== input.value) return input.classList.add("lugarEquivocado");
