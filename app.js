@@ -21,13 +21,19 @@ window.onload = function() {
   function elegirRespuesta() {
     respuesta = respuestas[Math.floor(Math.random() * respuestas.length)];
     respuestaSplit = respuesta.split("");
-    console.log(respuestaSplit);
   }
   elegirRespuesta()
 
   function openModal() {
     modalSection.style.display = "flex";
   }
+
+
+  window.addEventListener("keyup", function () {
+    Array.from(allInputsFirstForm).forEach(function (input, index) {
+      if(input.value.length === 1) return Array.from(allInputsFirstForm)[index + 1].focus();
+    });
+  });
 
   buttonFormOne.onclick = function (e) {
     e.preventDefault();
