@@ -46,7 +46,10 @@ window.onload = function(){
       if (!respuestaSplit.includes(input.value)) return input.classList.add("noExiste");
       if (respuestaSplit.includes(input.value) && respuestaSplit[index] !== input.value) return input.classList.add("lugarEquivocado");
     });
-    if (contador === 5) return console.log("GANASTE!");
+    if (contador === 5) {
+      tituloModal.innerText = "GANASTE";
+      return openModal()
+    };
   };
 
   buttonFormThree.onclick = function (e) {
@@ -60,7 +63,10 @@ window.onload = function(){
       if (!respuestaSplit.includes(input.value)) return input.classList.add("noExiste");
       if (respuestaSplit.includes(input.value) && respuestaSplit[index] !== input.value) return input.classList.add("lugarEquivocado");
     });
-    if (contador === 5) return console.log("GANASTE!");
+    if (contador === 5) {
+      tituloModal.innerText = "GANASTE";
+      return openModal()
+    };
   };
 
   buttonFormFour.onclick = function (e) {
@@ -74,7 +80,10 @@ window.onload = function(){
       if (!respuestaSplit.includes(input.value)) return input.classList.add("noExiste");
       if (respuestaSplit.includes(input.value) && respuestaSplit[index] !== input.value) return input.classList.add("lugarEquivocado");
     });
-    if (contador === 5) return console.log("GANASTE!");
+    if (contador === 5) {
+      tituloModal.innerText = "GANASTE";
+      return openModal()
+    };
   };
 
   buttonFormFive.onclick = function (e) {
@@ -88,7 +97,10 @@ window.onload = function(){
       if (!respuestaSplit.includes(input.value)) return input.classList.add("noExiste");
       if (respuestaSplit.includes(input.value) && respuestaSplit[index] !== input.value) return input.classList.add("lugarEquivocado");
     });
-    if (contador === 5) return console.log("GANASTE!");
+    if (contador === 5) {
+      tituloModal.innerText = "GANASTE";
+      return openModal()
+    };
   };
 
  // MODAL SETTINGS
