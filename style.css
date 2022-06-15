@@ -1,20 +1,23 @@
-h1{
-  
-}
-
-.contenedorJuego{
+main{
   display: flex;
+  flex-wrap: nowrap;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 90vh;
 }
 
-form{
+h1 {
+  font-size: 3em;
+  text-align: center;
+  margin: 30px 0;
+}
+
+form {
   display: flex;
+  flex-wrap: nowrap;
 }
 
-input:not([type='submit']){
+input:not([type='submit']) {
   width: 50px;
   height: 50px;
   margin: 5px;
@@ -24,12 +27,56 @@ input:not([type='submit']){
   text-transform: uppercase;
 }
 
-input[type='submit']{
+input[type='submit'] {
   width: 50px;
   height: 50px;
   margin: 5px 5px 5px 20px;
   text-align: center;
-  border: 1px solid black;
+}
+
+img {
+  width: 60%
+}
+
+article > p {
+  margin: 5px 0;
+  font-size: 1.2em;
+  width: 80%;
+}
+
+h2 {
+  font-size: 1.6em;
+  margin: 10px 0;
+}
+
+.contenedor {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  /* border: 5px solid orange */
+}
+
+.contenedorJuego {
+  display: flex;
+  flex: 2;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* border: 2px solid red; */
+}
+
+.comoJugar{
+  display: flex;
+  flex: 1 1 40%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* border: 2px solid blue; */
+}
+
+.bold{
+  font-weight: bold;
 }
 
 .acierto{

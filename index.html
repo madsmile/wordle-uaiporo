@@ -10,63 +10,66 @@
   <title>Wordle</title>
 </head>
 <body>
-  <h1>ADIVINA LA COMADREJA</h1>
-  <section class="contenedorJuego">
-    <form id="formOne">
-      <input type="text" id="firstLetter" class="firstFormInput" maxlength="1">
-      <input type="text" id="secondLetter" class="firstFormInput" maxlength="1">
-      <input type="text" id="thirdLetter" class="firstFormInput" maxlength="1">
-      <input type="text" id="fourthLetter" class="firstFormInput" maxlength="1">
-      <input type="text" id="fifthLetter" class="firstFormInput" maxlength="1">
-      <input type="submit" value="Try" id="buttonFormOne">
-    </form>
-    <form>
-      <input type="text" id="firstLetter" class="secondFormInput" maxlength="1">
-      <input type="text" id="secondLetter" class="secondFormInput" maxlength="1">
-      <input type="text" id="thirdLetter" class="secondFormInput" maxlength="1">
-      <input type="text" id="fourthLetter" class="secondFormInput" maxlength="1">
-      <input type="text" id="fifthLetter" class="secondFormInput" maxlength="1">
-      <input type="submit" value="Ty" id="buttonFormTwo">
-    </form>
-    <form>
-      <input type="text" class="thirdFormInput" maxlength="1">
-      <input type="text" class="thirdFormInput" maxlength="1">
-      <input type="text" class="thirdFormInput" maxlength="1">
-      <input type="text" class="thirdFormInput" maxlength="1">
-      <input type="text" class="thirdFormInput" maxlength="1">
-      <input type="submit" value="Try" id="buttonFormThree">
-    </form>
-    <form>
-      <input type="text" class="fourthFormInput" maxlength="1">
-      <input type="text" class="fourthFormInput" maxlength="1">
-      <input type="text" class="fourthFormInput" maxlength="1">
-      <input type="text" class="fourthFormInput" maxlength="1">
-      <input type="text" class="fourthFormInput" maxlength="1">
-      <input type="submit" value="Try" id="buttonFormFour">
-    </form>
-    <form>
-      <input type="text" class="fifthFormInput" maxlength="1">
-      <input type="text" class="fifthFormInput" maxlength="1">
-      <input type="text" class="fifthFormInput" maxlength="1">
-      <input type="text" class="fifthFormInput" maxlength="1">
-      <input type="text" class="fifthFormInput" maxlength="1">
-      <input type="submit" value="Try" id="buttonFormFive">
-    </form>
-  </section>
-  <section class="comoJugar">
-    <h2>Cómo jugar</h2>
-    <p>Adivina la palabra oculta en seis intentos.</p>
-    <p>Cada intento debe ser una palabra válida de 5 letras.</p>
-    <p> Después de cada intento el color de las letras cambia para mostrar qué tan cerca estás de acertar la palabra.</p>
-    <h2>Ejemplos</h2>
-    <img src="./assets/images/example1.jpeg" alt="Ejemplo 1">
-    <p>La letra <span>R</span> está en la palabra y en la posición correcta.</p>
-    <img src="./assets/images/example2.jpeg" alt="Ejemplo 2">
-    <p>La letra <span>C</span> está en la palabra pero en la posición incorrecta.</p>
-    <img src="./assets/images/example3.jpeg" alt="Ejemplo 3">
-    <p>La letra <span>O</span> no está en la palabra.</p>
-    <p>Puede haber letras repetidas y en ese caso las pistas son independientes para cada letra y tienen prioridad.</p>
-
-  </section>
+  <main>
+    <h1>ADIVINA LA COMADREJA</h1>
+    <section class="contenedor">
+      <section class="contenedorJuego">
+        <form id="formOne">
+          <input type="text" id="firstLetter" class="firstFormInput" maxlength="1">
+          <input type="text" id="secondLetter" class="firstFormInput" maxlength="1">
+          <input type="text" id="thirdLetter" class="firstFormInput" maxlength="1">
+          <input type="text" id="fourthLetter" class="firstFormInput" maxlength="1">
+          <input type="text" id="fifthLetter" class="firstFormInput" maxlength="1">
+          <input type="submit" value="Try" id="buttonFormOne">
+        </form>
+        <form>
+          <input type="text" id="firstLetter" class="secondFormInput" maxlength="1">
+          <input type="text" id="secondLetter" class="secondFormInput" maxlength="1">
+          <input type="text" id="thirdLetter" class="secondFormInput" maxlength="1">
+          <input type="text" id="fourthLetter" class="secondFormInput" maxlength="1">
+          <input type="text" id="fifthLetter" class="secondFormInput" maxlength="1">
+          <input type="submit" value="Ty" id="buttonFormTwo">
+        </form>
+        <form>
+          <input type="text" class="thirdFormInput" maxlength="1">
+          <input type="text" class="thirdFormInput" maxlength="1">
+          <input type="text" class="thirdFormInput" maxlength="1">
+          <input type="text" class="thirdFormInput" maxlength="1">
+          <input type="text" class="thirdFormInput" maxlength="1">
+          <input type="submit" value="Try" id="buttonFormThree">
+        </form>
+        <form>
+          <input type="text" class="fourthFormInput" maxlength="1">
+          <input type="text" class="fourthFormInput" maxlength="1">
+          <input type="text" class="fourthFormInput" maxlength="1">
+          <input type="text" class="fourthFormInput" maxlength="1">
+          <input type="text" class="fourthFormInput" maxlength="1">
+          <input type="submit" value="Try" id="buttonFormFour">
+        </form>
+        <form>
+          <input type="text" class="fifthFormInput" maxlength="1">
+          <input type="text" class="fifthFormInput" maxlength="1">
+          <input type="text" class="fifthFormInput" maxlength="1">
+          <input type="text" class="fifthFormInput" maxlength="1">
+          <input type="text" class="fifthFormInput" maxlength="1">
+          <input type="submit" value="Try" id="buttonFormFive">
+        </form>
+      </section>
+      <article class="comoJugar">
+          <h2 class="bold">Cómo jugar</h2>
+          <p>Adivina la palabra oculta en seis intentos.</p>
+          <p>Cada intento debe ser una palabra válida de 5 letras.</p>
+          <p> Después de cada intento el color de las letras cambia para mostrar qué tan cerca estás de acertar la palabra.</p>
+          <h2 class="bold">Ejemplos</h2>
+          <img src="./assets/images/example1.jpeg" alt="Ejemplo 1">
+          <p>La letra <span class="bold">R</span> está en la palabra y en la posición correcta.</p>
+          <img src="./assets/images/example2.jpeg" alt="Ejemplo 2">
+          <p>La letra <span class="bold">C</span> está en la palabra pero en la posición incorrecta.</p>
+          <img src="./assets/images/example3.jpeg" alt="Ejemplo 3">
+          <p>La letra <span class="bold">O</span> no está en la palabra.</p>
+          <p>Puede haber letras repetidas y en ese caso las pistas son independientes para cada letra y tienen prioridad.</p>
+      </article>
+    </section>
+  </main>
 </body>
 </html>
