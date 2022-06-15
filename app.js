@@ -30,7 +30,6 @@ window.onload = function() {
     reloj.innerHTML = tiempoDeJuego - 1;
     tiempoDeJuego--;
     if (tiempoDeJuego === 0) {
-      reloj.remove()
       tituloModal.innerText =
         "SE TE TERMINO EL TIEMPO" +
         "LA RESPUESTA CORRECTA ERA: " +
@@ -38,8 +37,6 @@ window.onload = function() {
       return openModal();
     }
   }, 1000);
-
-
 
   function elegirRespuesta() {
     respuesta = respuestas[Math.floor(Math.random() * respuestas.length)];
@@ -50,6 +47,16 @@ window.onload = function() {
 
   function openModal() {
     modalSection.style.display = "flex";
+  }
+
+  function ganoElUsuario() {
+    if (contador === 5) {
+      tituloModal.innerText = "GANASTE";
+      document
+        .querySelectorAll("input")
+        .forEach((x) => x.setAttribute("disabled", ""));
+      return openModal();
+    }
   }
 
   formOne.addEventListener("keyup", function (e) {
@@ -70,10 +77,7 @@ window.onload = function() {
       if (!respuestaSplit.includes(input.value)) return input.classList.add('noExiste');
       if (respuestaSplit.includes(input.value) && respuestaSplit[index] !== input.value) return input.classList.add("lugarEquivocado");
     })
-    if (contador === 5) {
-      tituloModal.innerText = "GANASTE";
-      return openModal()
-    };
+    ganoElUsuario()
     contador = 0;
     Array.from(allInputsSecondForm)[0].focus();
   };
@@ -96,10 +100,7 @@ window.onload = function() {
       if (!respuestaSplit.includes(input.value)) return input.classList.add("noExiste");
       if (respuestaSplit.includes(input.value) && respuestaSplit[index] !== input.value) return input.classList.add("lugarEquivocado");
     });
-    if (contador === 5) {
-      tituloModal.innerText = "GANASTE";
-      return openModal()
-    };
+    ganoElUsuario()
     contador = 0;
     Array.from(allInputsthirdFormInput)[0].focus();
   };
@@ -122,10 +123,7 @@ window.onload = function() {
       if (!respuestaSplit.includes(input.value)) return input.classList.add("noExiste");
       if (respuestaSplit.includes(input.value) && respuestaSplit[index] !== input.value) return input.classList.add("lugarEquivocado");
     });
-    if (contador === 5) {
-      tituloModal.innerText = "GANASTE";
-      return openModal()
-    };
+    ganoElUsuario()
     contador = 0;
     Array.from(allInputsfourthFormInput)[0].focus();
   };
@@ -148,11 +146,9 @@ window.onload = function() {
       if (!respuestaSplit.includes(input.value)) return input.classList.add("noExiste");
       if (respuestaSplit.includes(input.value) && respuestaSplit[index] !== input.value) return input.classList.add("lugarEquivocado");
     });
-    if (contador === 5) {
-      tituloModal.innerText = "GANASTE";
-      return openModal()
-    };
+    ganoElUsuario()
     contador = 0;
+    Array.from(allInputsfifthFormInput)[0].focus();
   };
 
   formFive.addEventListener("keyup", function () {
@@ -173,16 +169,14 @@ window.onload = function() {
       if (!respuestaSplit.includes(input.value)) return input.classList.add("noExiste");
       if (respuestaSplit.includes(input.value) && respuestaSplit[index] !== input.value) return input.classList.add("lugarEquivocado");
     });
-    if (contador === 5) {
-      tituloModal.innerText = "GANASTE";
-      return openModal()
-    };
+    ganoElUsuario()
     contador = 0;
   };
 
  // MODAL SETTINGS
 
   function openModal (){
+    reloj.remove();
     modalSection.style.display = 'flex';
   }
 
