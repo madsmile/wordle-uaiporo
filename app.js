@@ -13,14 +13,38 @@ window.onload = function() {
   var volverAJugar = document.getElementById("volverAJugar");
   var modalCloseBtn = document.getElementById("modal-close-button");
   var modalSection = document.getElementById("modal-section");
+  var formOne = document.getElementById("formOne");
+  var formTwo = document.getElementById("formTwo");
+  var formThree = document.getElementById("formThree");
+  var formFour = document.getElementById("formFour");
+  var formFive = document.getElementById("formFive");
+  var reloj = document.getElementById("contenedorReloj");
+
   var respuestas = ['piano', 'robot', 'poeta', 'tapon', 'raton', 'plato', 'tropa', 'pacto', 'silla', 'pasto', 'patio', 'birra', 'papel', 'funda', 'bolsa', 'media', 'plata', 'anana', 'balon'];
   var respuesta;
   var respuestaSplit;
   let contador = 0;
+  let tiempoDeJuego = 180;
+
+  setInterval(function() {
+    reloj.innerHTML = tiempoDeJuego - 1;
+    tiempoDeJuego--;
+    if (tiempoDeJuego === 0) {
+      reloj.remove()
+      tituloModal.innerText =
+        "SE TE TERMINO EL TIEMPO" +
+        "LA RESPUESTA CORRECTA ERA: " +
+        respuesta.toUpperCase();
+      return openModal();
+    }
+  }, 1000);
+
+
 
   function elegirRespuesta() {
     respuesta = respuestas[Math.floor(Math.random() * respuestas.length)];
     respuestaSplit = respuesta.split("");
+    console.log(respuestaSplit);
   }
   elegirRespuesta()
 
@@ -28,13 +52,13 @@ window.onload = function() {
     modalSection.style.display = "flex";
   }
 
-
-  window.addEventListener("keyup", function () {
+  formOne.addEventListener("keyup", function (e) {
     Array.from(allInputsFirstForm).forEach(function (input, index) {
-      if(input.value.length === 1) return Array.from(allInputsFirstForm)[index + 1].focus();
+      if (input.value.length === 1 && index < 4) {
+        Array.from(allInputsFirstForm)[index + 1].focus();
+      }
     });
   });
-
   buttonFormOne.onclick = function (e) {
     e.preventDefault();
     Array.from(allInputsFirstForm).forEach(function(input, index, array){
@@ -50,8 +74,17 @@ window.onload = function() {
       tituloModal.innerText = "GANASTE";
       return openModal()
     };
+    contador = 0;
+    Array.from(allInputsSecondForm)[0].focus();
   };
 
+  formTwo.addEventListener("keyup", function () {
+    Array.from(allInputsSecondForm).forEach(function (input, index) {
+      if (input.value.length === 1 && index < 4){
+        Array.from(allInputsSecondForm)[index + 1].focus()
+      };
+    });
+  });
   buttonFormTwo.onclick = function (e) {
     e.preventDefault();
     Array.from(allInputsSecondForm).forEach(function (input, index, array) {
@@ -67,8 +100,17 @@ window.onload = function() {
       tituloModal.innerText = "GANASTE";
       return openModal()
     };
+    contador = 0;
+    Array.from(allInputsthirdFormInput)[0].focus();
   };
 
+  formThree.addEventListener("keyup", function () {
+    Array.from(allInputsthirdFormInput).forEach(function (input, index) {
+      if (input.value.length === 1 && index < 4){
+        Array.from(allInputsthirdFormInput)[index + 1].focus();
+      }
+    });
+  });
   buttonFormThree.onclick = function (e) {
     e.preventDefault();
     Array.from(allInputsthirdFormInput).forEach(function (input, index, array) {
@@ -84,8 +126,17 @@ window.onload = function() {
       tituloModal.innerText = "GANASTE";
       return openModal()
     };
+    contador = 0;
+    Array.from(allInputsfourthFormInput)[0].focus();
   };
 
+  formFour.addEventListener("keyup", function () {
+    Array.from(allInputsfourthFormInput).forEach(function (input, index) {
+      if (input.value.length === 1 && index < 4){
+        Array.from(allInputsfourthFormInput)[index + 1].focus();
+      }
+    });
+  });
   buttonFormFour.onclick = function (e) {
     e.preventDefault();
     Array.from(allInputsfourthFormInput).forEach(function (input, index, array) {
@@ -101,8 +152,16 @@ window.onload = function() {
       tituloModal.innerText = "GANASTE";
       return openModal()
     };
+    contador = 0;
   };
 
+  formFive.addEventListener("keyup", function () {
+    Array.from(allInputsfifthFormInput).forEach(function (input, index) {
+      if (input.value.length === 1 && index < 4){
+        Array.from(allInputsfifthFormInput)[index + 1].focus();
+      }
+    });
+  });
   buttonFormFive.onclick = function (e) {
     e.preventDefault();
     Array.from(allInputsfifthFormInput).forEach(function (input, index, array) {
@@ -118,6 +177,7 @@ window.onload = function() {
       tituloModal.innerText = "GANASTE";
       return openModal()
     };
+    contador = 0;
   };
 
  // MODAL SETTINGS

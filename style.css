@@ -32,6 +32,7 @@ input[type='submit'] {
   height: 50px;
   margin: 5px 5px 5px 20px;
   text-align: center;
+  display: none;
 }
 
 img {
@@ -47,6 +48,11 @@ article > p {
 h2 {
   font-size: 1.6em;
   margin: 10px 0;
+}
+
+#contenedorReloj {
+  font-size: 2em;
+  margin-bottom: 20px;
 }
 
 #modal-section {
