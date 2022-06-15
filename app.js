@@ -1,4 +1,4 @@
-window.onload = function(){
+window.onload = function() {
   var buttonFormOne = document.getElementById("buttonFormOne");
   var allInputsFirstForm = document.getElementsByClassName("firstFormInput");
   var buttonFormTwo = document.getElementById("buttonFormTwo");
@@ -10,9 +10,20 @@ window.onload = function(){
   var buttonFormFive = document.getElementById("buttonFormFive");
   var allInputsfifthFormInput = document.getElementsByClassName("fifthFormInput");
   var tituloModal = document.getElementById("modal-title");
-  var respuesta = 'piano';
-  var respuestaSplit = respuesta.split('')
+  var volverAJugar = document.getElementById("volverAJugar");
+  var modalCloseBtn = document.getElementById("modal-close-button");
+  var modalSection = document.getElementById("modal-section");
+  var respuestas = ['piano', 'robot', 'poeta', 'tapon', 'raton', 'plato', 'tropa', 'pacto', 'silla', 'pasto', 'patio', 'birra', 'papel', 'funda', 'bolsa', 'media', 'plata', 'anana', 'balon'];
+  var respuesta;
+  var respuestaSplit;
   let contador = 0;
+
+  function elegirRespuesta() {
+    respuesta = respuestas[Math.floor(Math.random() * respuestas.length)];
+    respuestaSplit = respuesta.split("");
+    console.log(respuestaSplit);
+  }
+  elegirRespuesta()
 
   function openModal() {
     modalSection.style.display = "flex";
@@ -105,22 +116,22 @@ window.onload = function(){
 
  // MODAL SETTINGS
 
-  var modalSection = document.getElementById('modal-section');
-
   function openModal (){
-      modalSection.style.display = 'flex';
+    modalSection.style.display = 'flex';
   }
 
   function closeModal (e){
-      if(e.target == modalSection){
-          modalSection.style.display = 'none';
-      }
+    if(e.target == modalSection){
+      modalSection.style.display = 'none';
+    }
   }
   window.addEventListener('click', closeModal);
 
-  var modalCloseBtn = document.getElementById('modal-close-button');
-  modalCloseBtn.onclick = function (){
-      modalSection.style.display = 'none';
+  volverAJugar.onclick = function (e) {
+   window.location.reload();
+  };
+
+  modalCloseBtn.onclick = function(){
+    modalSection.style.display = "none";
   }
 }
-

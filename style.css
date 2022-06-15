@@ -133,3 +133,8 @@ h2 {
 .lugarEquivocado{
   background-color: #cab457;
 }
+
+.hideModal {
+  display: none;
+  border: 3px solid red;
+}
