@@ -20,28 +20,32 @@ window.onload = function() {
   var formFive = document.getElementById("formFive");
   var reloj = document.getElementById("contenedorReloj");
 
-  var respuestas = ['piano', 'robot', 'poeta', 'tapon', 'raton', 'plato', 'tropa', 'pacto', 'silla', 'pasto', 'patio', 'birra', 'papel', 'funda', 'bolsa', 'media', 'plata', 'anana', 'balon'];
+  var respuestas = ['piano', 'robot', 'poeta', 'tapon', 'raton', 'plato', 'tropa', 'pacto', 'silla', 'pasto', 'quito', 'patio', 'birra', 'papel', 'funda', 'bolsa', 'media', 'plata', 'anana', 'balon'];
   var respuesta;
   var respuestaSplit;
   let contador = 0;
   let tiempoDeJuego = 180;
 
-  setInterval(function() {
-    reloj.innerHTML = tiempoDeJuego - 1;
-    tiempoDeJuego--;
-    if (tiempoDeJuego === 0) {
-      tituloModal.innerText =
-        "SE TE TERMINO EL TIEMPO" +
-        "LA RESPUESTA CORRECTA ERA: " +
-        respuesta.toUpperCase();
-      return openModal();
+  document.getElementById("firstLetter").addEventListener(
+    "keydown", function(){
+      setInterval(function () {
+        reloj.innerHTML = tiempoDeJuego - 1;
+        tiempoDeJuego--;
+        if (tiempoDeJuego === 0) {
+          tituloModal.innerText =
+            "SE TE TERMINO EL TIEMPO" +
+            "LA RESPUESTA CORRECTA ERA: " +
+            respuesta.toUpperCase();
+          return openModal();
+        }
+      }, 1000)
     }
-  }, 1000);
+  )
 
   function elegirRespuesta() {
     respuesta = respuestas[Math.floor(Math.random() * respuestas.length)];
     respuestaSplit = respuesta.split("");
-    console.log(respuestaSplit);
+    // console.log(respuestaSplit);
   }
   elegirRespuesta()
 
