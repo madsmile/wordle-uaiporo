@@ -24,6 +24,7 @@ window.onload = function() {
   var respuesta;
   var respuestaSplit;
   let contador = 0;
+  let contadorErrores = 0;
   let tiempoDeJuego = 180;
 
   document.getElementById("firstLetter").addEventListener(
@@ -83,6 +84,7 @@ window.onload = function() {
     })
     ganoElUsuario()
     contador = 0;
+    contadorErrores++;
     Array.from(allInputsSecondForm)[0].focus();
   };
 
@@ -106,6 +108,7 @@ window.onload = function() {
     });
     ganoElUsuario()
     contador = 0;
+    contadorErrores++;
     Array.from(allInputsthirdFormInput)[0].focus();
   };
 
@@ -129,6 +132,7 @@ window.onload = function() {
     });
     ganoElUsuario()
     contador = 0;
+    contadorErrores++;
     Array.from(allInputsfourthFormInput)[0].focus();
   };
 
@@ -152,6 +156,7 @@ window.onload = function() {
     });
     ganoElUsuario()
     contador = 0;
+    contadorErrores++;
     Array.from(allInputsfifthFormInput)[0].focus();
   };
 
@@ -175,6 +180,13 @@ window.onload = function() {
     });
     ganoElUsuario()
     contador = 0;
+    contadorErrores++;
+    console.log(contadorErrores)
+    if(contadorErrores === 5) {
+      tituloModal.innerText = `SE ACABARON LOS INTENTOS, LA RESPUESTA CORRECTA ERA:
+      ${respuesta.toUpperCase()}`;
+      return openModal()
+    }
   };
 
  // MODAL SETTINGS
