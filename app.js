@@ -20,7 +20,7 @@ window.onload = function() {
   var formFive = document.getElementById("formFive");
   var reloj = document.getElementById("contenedorReloj");
 
-  var respuestas = ['ПОРОХ','порох','Порох'];
+  var respuestas = ['порох'];
   var respuesta;
   var respuestaSplit;
   let contador = 0;
