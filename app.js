@@ -20,7 +20,7 @@ window.onload = function() {
   var formFive = document.getElementById("formFive");
   var reloj = document.getElementById("contenedorReloj");
 
-  var respuestas = ['piano', 'robot', 'poeta', 'tapon', 'raton', 'plato', 'tropa', 'pacto', 'silla', 'pasto', 'quito', 'patio', 'birra', 'papel', 'funda', 'bolsa', 'media', 'plata', 'anana', 'balon'];
+  var respuestas = ['ПОРОХ'];
   var respuesta;
   var respuestaSplit;
   let contador = 0;
@@ -34,8 +34,8 @@ window.onload = function() {
         tiempoDeJuego--;
         if (tiempoDeJuego === 0) {
           tituloModal.innerText =
-            "SE TE TERMINO EL TIEMPO" +
-            "LA RESPUESTA CORRECTA ERA: " +
+            "ВАШ ЧАС ЗАКІНЧИВСЯ" +
+            "ПРАВИЛЬНА ВІДПОВІДЬ БУЛА: " +
             respuesta.toUpperCase();
           return openModal();
         }
@@ -56,7 +56,7 @@ window.onload = function() {
 
   function ganoElUsuario() {
     if (contador === 5) {
-      tituloModal.innerText = "GANASTE";
+      tituloModal.innerText = "ПО РО ШЕН КО!";
       document
         .querySelectorAll("input")
         .forEach((x) => x.setAttribute("disabled", ""));
@@ -183,7 +183,7 @@ window.onload = function() {
     contadorErrores++;
     console.log(contadorErrores)
     if(contadorErrores === 5) {
-      tituloModal.innerText = `SE ACABARON LOS INTENTOS, LA RESPUESTA CORRECTA ERA:
+      tituloModal.innerText = `СПРОБИ ЗАКІНЧИЛИСЯ, ПРАВИЛЬНА ВІДПОВІДЬ БУЛА:
       ${respuesta.toUpperCase()}`;
       return openModal()
     }
